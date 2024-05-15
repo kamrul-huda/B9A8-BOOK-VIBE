@@ -10,13 +10,14 @@ const BookDetail = () => {
 
   const handleReadBook = () => {
     const storedReadBooks = getStoredReadBook();
-    console.log(storedReadBooks);
+    // console.log(storedReadBooks);
     const isExist = storedReadBooks.find((book) => book === parseInt(id));
     if (isExist) {
-      toast("Already exists");
+      toast("you have Already Read this books");
     } else {
       saveReadBooks(parseInt(id));
-      toast("Read book successfully");
+      toast("Books Added to Read List");
+      //you have Already Read this books-- if wishlist click
     }
   };
 
