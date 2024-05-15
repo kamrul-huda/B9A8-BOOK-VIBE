@@ -1,34 +1,34 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getStoredReadBook } from "../../Utility/localStorage";
+import {
+  getStoredReadBook,
+  getStoredWishlistBook,
+} from "../../Utility/localStorage";
 
 const ListedBooks = () => {
   const books = useLoaderData();
   const [readBooks, setReadBooks] = useState([]);
   const [displayReadBooks, setDisplayReadBooks] = useState([]);
 
+  const [wishlistBooks, setWishlistBooks] = useState([]);
+  const [displayWishlistBooks, setDisplayWishlistBooks] = useState([]);
+
   const handleReadBooksFilter = (filter) => {
     if (filter === "Sort By") {
       setDisplayReadBooks(readBooks);
     } else if (filter === "Rating") {
-      //   const ratingBooks = readBooks.filter((book) => book.rating === "Remote");
-      const ratingBooks = readBooks.sort((a, b) =>
-        a.rating.localeCompare(b.rating)
+      const ratingBooks = [...readBooks].sort((a, b) =>
+        a.rating > b.rating ? 1 : -1
       );
       setDisplayReadBooks(ratingBooks);
-    } else if (filter === "No of pages") {
-      //   const noOfPagesOfBook = readBooks.filter(
-      //     (book) => book.totalPages === "Onsite"
-      const noOfPagesOfBook = readBooks.sort((a, b) =>
-        a.totalPages.localeCompare(b.totalPages)
+    } else if (filter === "Number of pages") {
+      const noOfPagesOfBook = [...readBooks].sort((a, b) =>
+        a.totalPages > b.totalPages ? 1 : -1
       );
       setDisplayReadBooks(noOfPagesOfBook);
     } else if (filter === "Publisher year") {
-      //   const publisherBooks = readBooks.filter(
-      //     (book) => book.publisher === "Onsite"
-      //   );
-      const publisherBooks = readBooks.sort((a, b) =>
-        a.publisher.localeCompare(b.publisher)
+      const publisherBooks = [...readBooks].sort((a, b) =>
+        a.yearOfPublishing > b.yearOfPublishing ? 1 : -1
       );
       setDisplayReadBooks(publisherBooks);
     }
@@ -36,6 +36,7 @@ const ListedBooks = () => {
 
   useEffect(() => {
     const storedReadBooks = getStoredReadBook();
+    const storedWishlistBooks = getStoredWishlistBook();
 
     if (books.length > 0) {
       //   const jobsApplied = jobs.filter((job) => storedJobIds.includes(job.id));
@@ -48,6 +49,19 @@ const ListedBooks = () => {
       }
       setReadBooks(booksRead);
       setDisplayReadBooks(booksRead);
+    }
+
+    if (books.length > 0) {
+      //   const jobsApplied = jobs.filter((job) => storedJobIds.includes(job.id));
+      const booksWishList = [];
+      for (const id of storedWishlistBooks) {
+        const book = books.find((book) => book.bookId === id);
+        if (book) {
+          booksWishList.push(book);
+        }
+      }
+      setWishlistBooks(booksWishList);
+      setDisplayWishlistBooks(booksWishList);
     }
   }, []);
 
@@ -62,13 +76,13 @@ const ListedBooks = () => {
             <a>Sort By</a>
           </li>
           <li onClick={() => handleReadBooksFilter("Rating")}>
-            <a>Remote</a>
+            <a>Rating</a>
           </li>
           <li onClick={() => handleReadBooksFilter("Number of pages")}>
-            <a>Onside</a>
+            <a>Number of pages</a>
           </li>
-          <li onClick={() => handleReadBooksFilter("Publisher")}>
-            <a>Onside</a>
+          <li onClick={() => handleReadBooksFilter("Publisher year")}>
+            <a>Publisher</a>
           </li>
         </ul>
       </details>
@@ -108,7 +122,15 @@ const ListedBooks = () => {
           role="tabpanel"
           className="tab-content bg-base-100 border-base-300 rounded-box p-6"
         >
-          Tab content 2
+          <ul>
+            {displayWishlistBooks.map((book) => (
+              <li key={book.bookId}>
+                <span>
+                  {book.bookName} {book.author}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
