@@ -1,5 +1,10 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { getStoredReadBook, saveReadBooks } from "../../Utility/localStorage";
+import {
+  getStoredReadBook,
+  getStoredWishlistBook,
+  saveReadBooks,
+  saveWishlistBooks,
+} from "../../Utility/localStorage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,14 +15,27 @@ const BookDetail = () => {
 
   const handleReadBook = () => {
     const storedReadBooks = getStoredReadBook();
-    // console.log(storedReadBooks);
     const isExist = storedReadBooks.find((book) => book === parseInt(id));
     if (isExist) {
-      toast("you have Already Read this books");
+      toast("You have Already Read this books");
     } else {
       saveReadBooks(parseInt(id));
       toast("Books Added to Read List");
-      //you have Already Read this books-- if wishlist click
+    }
+  };
+
+  const handleWishlistBook = () => {
+    const storedWishlistBooks = getStoredWishlistBook();
+    const storedReadBooks = getStoredReadBook();
+    const isExistReadBook = storedReadBooks.find(
+      (book) => book === parseInt(id)
+    );
+    const isExist = storedWishlistBooks.find((book) => book === parseInt(id));
+    if (isExist || isExistReadBook) {
+      toast("You have Already Read this books");
+    } else {
+      saveWishlistBooks(parseInt(id));
+      toast("Books Added to Wishlist");
     }
   };
 
@@ -51,7 +69,7 @@ const BookDetail = () => {
         <p>{yearOfPublishing}</p>
         <p>{rating}</p>
         <button onClick={handleReadBook}>Read</button>
-        <button>Wishlist</button>
+        <button onClick={handleWishlistBook}>Wishlist</button>
         <ToastContainer />
       </div>
     </div>
