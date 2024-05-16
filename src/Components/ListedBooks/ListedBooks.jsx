@@ -4,6 +4,7 @@ import {
   getStoredReadBook,
   getStoredWishlistBook,
 } from "../../Utility/localStorage";
+import ReadBook from "../ReadBook/ReadBook";
 
 const ListedBooks = () => {
   const books = useLoaderData();
@@ -97,17 +98,11 @@ const ListedBooks = () => {
         />
         <div
           role="tabpanel"
-          className="tab-content bg-base-100 border-base-300 rounded-box p-6"
+          className="tab-content bg-base-100 border-base-300 rounded-box gap-3"
         >
-          <ul>
-            {displayReadBooks.map((book) => (
-              <li key={book.bookId}>
-                <span>
-                  {book.bookName} {book.author}
-                </span>
-              </li>
-            ))}
-          </ul>
+          {displayReadBooks.map((book) => (
+            <ReadBook key={book.bookId} book={book}></ReadBook>
+          ))}
         </div>
 
         <input

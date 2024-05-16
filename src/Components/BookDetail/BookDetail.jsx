@@ -107,7 +107,10 @@ const BookDetail = () => {
           {/* <button onClick={handleReadBook} className="btn bor">
             Read
           </button> */}
-          <button className="btn bg-transparent hover:bg-transparent hover:scale-105 text-[#131313] font-semibold text-xl border-solid border-[#1313134D] .workSans">
+          <button
+            onClick={handleReadBook}
+            className="btn bg-transparent hover:bg-transparent hover:scale-105 text-[#131313] font-semibold text-xl border-solid border-[#1313134D] .workSans"
+          >
             Read
           </button>
           <button
