@@ -19,25 +19,36 @@ const Book = ({ book }) => {
   return (
     <div>
       <Link to={`/bookDetail/${bookId}`}>
-        <div className="card card-compact bg-base-100 border-2 border-solid ">
-          <figure>
-            <img className="h-[250px]" src={image} alt="Shoes" />
-          </figure>
+        <div className="card card-compact bg-base-100 border-2 border-solid p-4 ">
+          <img
+            className="bg-[#F3F3F3] rounded-2xl h-[200px] object-contain"
+            src={image}
+            alt="Shoes"
+          />
 
-          <div className="card-body">
-            <div className="flex items-center justify-start gap-3">
-              {tags.map((tag) => (
-                <p>{tag}</p>
+          <div className="card-body space-y-2">
+            <div className="flex  justify-between items-start gap-3 text-left">
+              {tags.map((tag, i) => (
+                <p
+                  key={i}
+                  className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium  .workSans py-1"
+                >
+                  {tag}
+                </p>
               ))}
             </div>
-            <h2>{bookName}</h2>
-            <h2>{author}</h2>
-            <hr />
-            <div className="flex justify-between items-center">
-              <p>{category}</p>
-              <p className="flex justify-end items-center">
+            <h2 className="text-[#131313] .playfair font-bold text-2xl text-left">
+              {bookName}
+            </h2>
+            <h2 className="text-[#131313CC] font-medium .workSans text-lg  text-left">
+              By: {author}
+            </h2>
+            <hr className="border-dashed" />
+            <div className="flex justify-between items-center text-[#131313CC] font-medium text-left text-base">
+              <p className="">{category}</p>
+              <p className="flex justify-end items-center gap-1">
                 <span>{rating}</span>
-                <span>
+                <span className="font-bold">
                   <CiStar />
                 </span>
               </p>
