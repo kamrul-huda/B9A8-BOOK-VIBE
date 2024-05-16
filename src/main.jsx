@@ -8,12 +8,13 @@ import ListedBooks from "./Components/ListedBooks/ListedBooks";
 import PagesToRead from "./Components/PagesToRead/PagesToRead";
 import BookDetail from "./Components/BookDetail/BookDetail";
 import AboutUS from "./Components/AboutUS/AboutUS";
+import ErrorPage from "./Components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/pagesToRead",
         element: <PagesToRead></PagesToRead>,
+        loader: () => fetch("../books.json"),
       },
       {
         path: "/bookDetail/:id",

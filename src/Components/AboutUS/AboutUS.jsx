@@ -54,7 +54,7 @@ const AboutUS = () => {
   console.log(strDescending);
   return (
     <div className="main">
-      {/* <select
+      <select
         defaultValue={"DEFAULT"}
         onChange={(e) => setSortState(e.target.value)}
       >
@@ -68,19 +68,7 @@ const AboutUS = () => {
         {books.sort(sortMethods[sortState].method).map((el, i) => (
           <li key={i}>{el.title}</li>
         ))}
-      </ul> */}
-
-      {strDescending.map((employee) => {
-        return (
-          <div key={employee.id}>
-            <h2>id: {employee.id}</h2>
-            <h2>name: {employee.name}</h2>
-            <h2>country: {employee.country}</h2>
-
-            <hr />
-          </div>
-        );
-      })}
+      </ul>
     </div>
   );
 };
