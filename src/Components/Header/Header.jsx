@@ -13,10 +13,10 @@ const Header = () => {
         <NavLink to="/pagesToRead">Pages to Read</NavLink>
       </li>
       <li>
-        <NavLink to="/aboutUS">Statistics</NavLink>
+        <NavLink to="/aboutUS">About US</NavLink>
       </li>
       <li>
-        <NavLink to="/blogs">Blogs</NavLink>
+        <NavLink to="/customerReview">Customer Review</NavLink>
       </li>
     </>
   );
