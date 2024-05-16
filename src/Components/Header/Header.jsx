@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./header.css";
 
 const Header = () => {
   const links = (
@@ -21,7 +22,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar">
+    <div className="navbar mt-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,14 +48,20 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Career Hub</a>
+        <a className="text-2xl font-bold .workSans text-[#23BE0A]">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="menu menu-horizontal px-1 font-semibold .workSans">
+          {links}
+        </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Sign In</a>
-        <a className="btn">Sign Up</a>
+      <div className="navbar-end space-x-2">
+        <a className="btn bg-[#23BE0A] text-white hover:bg-[#23BE0A] .workSans">
+          Sign In
+        </a>
+        <a className="btn bg-[#59C6D2] text-white hover:bg-[#59C6D2] .workSans">
+          Sign Up
+        </a>
       </div>
     </div>
   );

@@ -17,10 +17,10 @@ const BookDetail = () => {
     const storedReadBooks = getStoredReadBook();
     const isExist = storedReadBooks.find((book) => book === parseInt(id));
     if (isExist) {
-      toast("You have Already Read this books");
+      toast.warn("You have Already Read this books");
     } else {
       saveReadBooks(parseInt(id));
-      toast("Books Added to Read List");
+      toast.success("Books Added to Read List");
     }
   };
 
@@ -35,7 +35,7 @@ const BookDetail = () => {
       toast("You have Already Read this books");
     } else {
       saveWishlistBooks(parseInt(id));
-      toast("Books Added to Wishlist");
+      toast.success("Books Added to Wishlist");
     }
   };
 

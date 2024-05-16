@@ -1,0 +1,6 @@
+li a.active {
+  background-color: #fff !important;
+  border: 2px solid;
+  border-color: #23be0a !important;
+  color: #23be0a !important;
+}

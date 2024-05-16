@@ -68,7 +68,7 @@ const ListedBooks = () => {
   }, []);
 
   return (
-    <div className="mx-40">
+    <div>
       <div className="h-[100px] bg-slate-300">Books</div>
 
       <details className="dropdown">
