@@ -74,7 +74,7 @@ const ListedBooks = () => {
       <div className="h-[150px] bg-[#1313130D] flex justify-center items-center .playfair font-bold text-4xl text-[#131313] rounded-3xl">
         Books
       </div>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-8">
         <details className="dropdown ">
           <summary className="m-1 btn bg-[#23BE0A] text-white hover:bg-[#23BE0A] text-xl ">
             <span className="px-3"> Sort By</span> <IoIosArrowDown />
