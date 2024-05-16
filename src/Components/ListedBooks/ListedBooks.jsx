@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
 import {
   getStoredReadBook,
   getStoredWishlistBook,
@@ -70,36 +71,38 @@ const ListedBooks = () => {
 
   return (
     <div>
-      <div className="h-[100px] bg-slate-300">Books</div>
-
-      <details className="dropdown">
-        <summary className="m-1 btn">Sort By</summary>
-        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-          <li onClick={() => handleReadBooksFilter("Rating")}>
-            <a>Rating</a>
-          </li>
-          <li onClick={() => handleReadBooksFilter("Number of pages")}>
-            <a>Number of pages</a>
-          </li>
-          <li onClick={() => handleReadBooksFilter("Publisher year")}>
-            <a>Publisher</a>
-          </li>
-        </ul>
-      </details>
+      <div className="h-[150px] bg-[#1313130D] flex justify-center items-center .playfair font-bold text-4xl text-[#131313] rounded-3xl">
+        Books
+      </div>
+      <div className="flex justify-center mt-10">
+        <details className="dropdown ">
+          <summary className="m-1 btn bg-[#23BE0A] text-white hover:bg-[#23BE0A] text-xl ">
+            <span className="px-3"> Sort By</span> <IoIosArrowDown />
+          </summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li onClick={() => handleReadBooksFilter("Rating")}>
+              <a>Rating</a>
+            </li>
+            <li onClick={() => handleReadBooksFilter("Number of pages")}>
+              <a>Number of pages</a>
+            </li>
+            <li onClick={() => handleReadBooksFilter("Publisher year")}>
+              <a>Publisher</a>
+            </li>
+          </ul>
+        </details>
+      </div>
 
       <div role="tablist" className="tabs tabs-lifted">
         <input
           type="radio"
           name="my_tabs_2"
           role="tab"
-          className="tab"
-          aria-label="Tab 1"
+          className="tab checked:font-bold text-lg"
+          aria-label="Read Books"
           checked
         />
-        <div
-          role="tabpanel"
-          className="tab-content bg-base-100 border-base-300 rounded-box gap-3"
-        >
+        <div role="tabpanel" className="tab-content  rounded-box gap-3">
           {displayReadBooks.map((book) => (
             <ReadBook key={book.bookId} book={book}></ReadBook>
           ))}
@@ -109,22 +112,13 @@ const ListedBooks = () => {
           type="radio"
           name="my_tabs_2"
           role="tab"
-          className="tab"
-          aria-label="Tab 2"
+          className="tab checked:font-bold text-lg"
+          aria-label="Wishlist Books"
         />
-        <div
-          role="tabpanel"
-          className="tab-content bg-base-100 border-base-300 rounded-box p-6"
-        >
-          <ul>
-            {displayWishlistBooks.map((book) => (
-              <li key={book.bookId}>
-                <span>
-                  {book.bookName} {book.author}
-                </span>
-              </li>
-            ))}
-          </ul>
+        <div role="tabpanel" className="tab-content  rounded-box p-6">
+          {displayWishlistBooks.map((book) => (
+            <ReadBook key={book.bookId} book={book}></ReadBook>
+          ))}
         </div>
       </div>
     </div>
