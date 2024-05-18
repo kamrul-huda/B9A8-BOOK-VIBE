@@ -48,18 +48,20 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="text-2xl font-bold .workSans text-[#23BE0A]">Book Vibe</a>
+        <a className="lg:text-2xl text-xl text-wrap font-bold workSans text-[#23BE0A]">
+          Book Haven
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-semibold .workSans">
+        <ul className="menu menu-horizontal px-1 font-semibold workSans">
           {links}
         </ul>
       </div>
       <div className="navbar-end space-x-2">
-        <a className="btn bg-[#23BE0A] text-white hover:bg-[#23BE0A] .workSans">
+        <a className="btn bg-[#23BE0A] text-white hover:bg-[#23BE0A] workSans">
           Sign In
         </a>
-        <a className="btn bg-[#59C6D2] text-white hover:bg-[#59C6D2] .workSans">
+        <a className="btn bg-[#59C6D2] text-white hover:bg-[#59C6D2] workSans">
           Sign Up
         </a>
       </div>

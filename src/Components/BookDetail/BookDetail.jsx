@@ -59,15 +59,21 @@ const BookDetail = () => {
         <img className="bg-[#F3F3F3] h-full object-fill" src={image} alt="" />
       </div>
       <div className="w-1/2 space-y-3 h-full">
-        <p className="text-[##131313] font-bold text-4xl">{bookName}</p>
-        <p className="text-[#131313CC] font-medium text-xl">By: {author}</p>
+        <p className="text-[##131313] font-bold text-4xl playfair">
+          {bookName}
+        </p>
+        <p className="text-[#131313CC] font-medium text-xl workSans">
+          By: {author}
+        </p>
         <hr />
-        <p className="text-[#131313CC] font-medium text-xl">{category}</p>
+        <p className="text-[#131313CC] font-medium text-xl workSans">
+          {category}
+        </p>
         <hr />
-        <p className=".workSans text-[#131313B3]">
+        <p className=".workSans text-[#131313B3] workSans">
           <b>Review: </b> {review}
         </p>
-        <div className="flex  items-center gap-4 text-left">
+        <div className="flex  items-center gap-4 text-left workSans">
           <b> Tag:</b>
           {tags.map((tag, i) => (
             <p
@@ -81,13 +87,13 @@ const BookDetail = () => {
         <hr />
 
         <div className="flex gap-5">
-          <div className=".workSans text-[#131313B3] flex flex-col gap-3">
+          <div className="workSans text-[#131313B3] flex flex-col gap-3">
             <div> Number of pages:</div>
             <div> Publisher:</div>
             <div> Year of Publishing:</div>
             <div> Rating:</div>
           </div>
-          <div className=".workSans text-[#131313B3] flex flex-col gap-3">
+          <div className="workSans text-[#131313B3] flex flex-col gap-3">
             <div>
               <b>{totalPages}</b>
             </div>
@@ -104,18 +110,15 @@ const BookDetail = () => {
         </div>
 
         <div className="flex justify-start gap-4">
-          {/* <button onClick={handleReadBook} className="btn bor">
-            Read
-          </button> */}
           <button
             onClick={handleReadBook}
-            className="btn bg-transparent hover:bg-transparent hover:scale-105 text-[#131313] font-semibold text-xl border-solid border-[#1313134D] .workSans"
+            className="btn bg-transparent hover:bg-transparent hover:scale-105 text-[#131313] font-semibold text-xl border-solid border-[#1313134D] workSans"
           >
             Read
           </button>
           <button
             onClick={handleWishlistBook}
-            className="btn bg-[#50B1C9] text-white hover:bg-[#50B1C9] font-semibold text-xl hover:scale-105 .workSans"
+            className="btn bg-[#50B1C9] text-white hover:bg-[#50B1C9] font-semibold text-xl hover:scale-105 workSans"
           >
             Wishlist
           </button>

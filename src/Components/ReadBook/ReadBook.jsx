@@ -18,15 +18,19 @@ const ReadBook = ({ book }) => {
     yearOfPublishing,
   } = book;
   return (
-    <div className="flex justify-between items-center mt-10 gap-6 h-[300px] border-2 rounded-xl p-5">
-      <div className="w-1/3 bg-[#1313130D] rounded-2xl flex justify-center h-full">
+    <div className="lg:flex justify-between items-center mt-10 gap-6 lg:h-[300px] border-2 rounded-xl p-5">
+      <div className="lg:w-1/3 bg-[#1313130D] rounded-2xl flex justify-center h-full">
         <img className="bg-[#F3F3F3] h-full object-fill" src={image} alt="" />
       </div>
-      <div className="w-2/3 space-y-2 h-full flex flex-col justify-center">
-        <p className="text-[##131313] font-bold text-4xl">{bookName}</p>
-        <p className="text-[#131313CC] font-medium text-xl">By: {author}</p>
+      <div className="lg:w-2/3 space-y-2 h-full lg:flex ;g:flex-col lg:justify-center">
+        <p className="text-[##131313] font-bold text-2xl lg:text-4xl playfair mt-3 lg:mt-0">
+          {bookName}
+        </p>
+        <p className="text-[#131313CC] font-medium text-xl workSans">
+          By: {author}
+        </p>
 
-        <div className="flex  items-center gap-4 text-left">
+        <div className="flex  items-center gap-4 text-left workSans">
           <b> Tag</b>
           {tags.map((tag, i) => (
             <p
@@ -38,15 +42,15 @@ const ReadBook = ({ book }) => {
           ))}
         </div>
 
-        <div className="flex justify-start items-center gap-6 pb-3">
-          <div className=".workSans text-[#131313B3] flex items-center gap-2">
+        <div className="lg:flex justify-start items-center gap-6 pb-3">
+          <div className="workSans text-[#131313B3] flex items-center gap-2">
             <span>
               <GoPeople />
             </span>
             <span> Publisher:</span>
             <span> {publisher}</span>
           </div>
-          <div className=".workSans text-[#131313B3] flex items-center gap-2">
+          <div className="workSans text-[#131313B3] flex items-center gap-2">
             <span>
               <RiPagesLine />
             </span>
@@ -55,17 +59,17 @@ const ReadBook = ({ book }) => {
           </div>
         </div>
         <hr className="" />
-        <div className="flex justify-start items-center pt-3 gap-6">
-          <div className="btn bg-[#328EFF26] hover:bg-[#328EFF26] hover:scale-105 rounded-full .workSans text-[#328EFF]">
+        <div className="flex flex-col gap-2 lg:flex lg:justify-start lg:items-center pt-3 lg:gap-6">
+          <div className="btn bg-[#328EFF26] hover:bg-[#328EFF26] hover:scale-105 rounded-full workSans text-[#328EFF]">
             <span> Category:</span>
             <span> {category}</span>
           </div>
-          <div className="btn .workSans text-[#FFAC33] bg-[#FFAC3326] hover:bg-[#FFAC3326] hover:scale-105 rounded-full">
+          <div className="btn workSans text-[#FFAC33] bg-[#FFAC3326] hover:bg-[#FFAC3326] hover:scale-105 rounded-full">
             <span> Rating:</span>
             <span>{rating}</span>
           </div>
           <Link to={`/bookDetail/${bookId}`}>
-            <button className="btn bg-[#23BE0A] hover:bg-[#23BE0A] hover:scale-105 text-white rounded-full font-medium text-base .workSans">
+            <button className="btn w-full bg-[#23BE0A] hover:bg-[#23BE0A] hover:scale-105 text-white rounded-full font-medium text-base workSans">
               View Details
             </button>
           </Link>

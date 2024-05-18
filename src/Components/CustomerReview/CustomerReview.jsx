@@ -9,8 +9,8 @@ const CustomerReview = () => {
       .then((data) => setCustomers(data));
   }, [customers, setCustomers]);
   return (
-    <div>
-      <div className="hero min-h-screen bg-base-200">
+    <div className="">
+      <div className="hero min-h-screen bg-base-200 rounded-3xl mt-10">
         <div className="hero-content flex-col lg:flex-row-reverse gap-14 justify-center">
           <div className="text-center w-1/2 lg:text-left">
             {customers.map((customer) => (
@@ -35,12 +35,14 @@ const CustomerReview = () => {
                   <span className="label-text">Review</span>
                 </label>
                 <textarea
-                  placeholder="Bio"
-                  className="textarea textarea-bordered w-full h-52"
+                  placeholder="Review"
+                  className="textarea textarea-bordered w-full h-60"
                 ></textarea>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Post Your Review</button>
+                <button className="btn bg-[#23BE0A] hover:bg-[#23BE0A] text-white">
+                  Post Your Review
+                </button>
               </div>
             </form>
           </div>

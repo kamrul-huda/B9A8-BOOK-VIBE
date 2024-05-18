@@ -3,7 +3,7 @@
     "id": 1,
     "customerName": "Emma Wilson",
     "review_date": "2024-05-10",
-    "image": "https://example.com/images/reviews/emma_wilson.jpg",
+    "image": "https://i.ibb.co/H2w3zhV/avater-3.png",
     "review": "A fantastic book shop with a wide selection of titles. The staff is friendly and very knowledgeable.",
     "rating": 5
   },
@@ -12,7 +12,7 @@
     "id": 2,
     "customerName": "Liam Anderson",
     "review_date": "2024-05-08",
-    "image": "https://example.com/images/reviews/liam_anderson.jpg",
+    "image": "https://i.ibb.co/TqCjmY6/avater-1.png",
     "review": "Great atmosphere and a cozy place to browse books. Found some rare editions!",
     "rating": 4
   },
@@ -21,7 +21,7 @@
     "id": 3,
     "customerName": "Sophia Martinez",
     "review_date": "2024-05-05",
-    "image": "https://example.com/images/reviews/sophia_martinez.jpg",
+    "image": "https://i.ibb.co/DkgVYXS/avater-2.jpg",
     "review": "The shop has a good collection but the prices are a bit high. Still, a nice place to visit.",
     "rating": 3
   }

@@ -71,7 +71,7 @@ const ListedBooks = () => {
 
   return (
     <div>
-      <div className="h-[150px] bg-[#1313130D] flex justify-center items-center .playfair font-bold text-4xl text-[#131313] rounded-3xl">
+      <div className="h-[150px] bg-[#1313130D] flex justify-center items-center playfair font-bold text-4xl text-[#131313] rounded-3xl">
         Books
       </div>
       <div className="flex justify-center mt-8">
@@ -102,7 +102,10 @@ const ListedBooks = () => {
           aria-label="Read Books"
           checked
         />
-        <div role="tabpanel" className="tab-content  rounded-box gap-3">
+        <div
+          role="tabpanel"
+          className="tab-content  rounded-box gap-3 p-2 md:p-2"
+        >
           {displayReadBooks.map((book) => (
             <ReadBook key={book.bookId} book={book}></ReadBook>
           ))}
