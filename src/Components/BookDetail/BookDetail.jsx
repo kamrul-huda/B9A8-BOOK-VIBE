@@ -54,11 +54,11 @@ const BookDetail = () => {
   } = book;
 
   return (
-    <div className="flex justify-between items-center mt-10 gap-6 min-h-[400px]">
-      <div className="w-1/2 bg-[#1313130D] rounded-2xl flex justify-center h-full">
+    <div className="flex flex-col md:flex-row  justify-between items-center mt-10 gap-6 min-h-[400px] p-2">
+      <div className="w-full md:w-1/2 bg-[#1313130D] rounded-2xl flex justify-center h-full">
         <img className="bg-[#F3F3F3] h-full object-fill" src={image} alt="" />
       </div>
-      <div className="w-1/2 space-y-3 h-full">
+      <div className="w-full md:w-1/2 space-y-3 h-full p-3">
         <p className="text-[##131313] font-bold text-4xl playfair">
           {bookName}
         </p>
@@ -78,7 +78,7 @@ const BookDetail = () => {
           {tags.map((tag, i) => (
             <p
               key={i}
-              className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium  .workSans py-1"
+              className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium  workSans py-1"
             >
               #{tag}
             </p>
@@ -86,7 +86,7 @@ const BookDetail = () => {
         </div>
         <hr />
 
-        <div className="flex gap-5">
+        <div className="flex gap-2 md:gap-5">
           <div className="workSans text-[#131313B3] flex flex-col gap-3">
             <div> Number of pages:</div>
             <div> Publisher:</div>

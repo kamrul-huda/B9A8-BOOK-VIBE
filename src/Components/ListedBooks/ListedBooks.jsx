@@ -71,7 +71,7 @@ const ListedBooks = () => {
 
   return (
     <div>
-      <div className="h-[150px] bg-[#1313130D] flex justify-center items-center playfair font-bold text-4xl text-[#131313] rounded-3xl">
+      <div className="h-[150px] bg-[#1313130D] flex justify-center items-center playfair font-bold text-4xl text-[#131313] rounded-3xl mt-6">
         Books
       </div>
       <div className="flex justify-center mt-8">
@@ -93,12 +93,12 @@ const ListedBooks = () => {
         </details>
       </div>
 
-      <div role="tablist" className="tabs tabs-lifted">
+      <div role="tablist" className="tabs tabs-lifted mt-5 md:mt-0">
         <input
           type="radio"
           name="my_tabs_2"
           role="tab"
-          className="tab checked:font-bold text-lg"
+          className="tab checked:font-bold text-lg  text-nowrap"
           aria-label="Read Books"
           checked
         />
@@ -115,7 +115,7 @@ const ListedBooks = () => {
           type="radio"
           name="my_tabs_2"
           role="tab"
-          className="tab checked:font-bold text-lg"
+          className="tab checked:font-bold text-lg text-nowrap"
           aria-label="Wishlist Books"
         />
         <div role="tabpanel" className="tab-content  rounded-box p-6">

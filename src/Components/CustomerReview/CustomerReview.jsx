@@ -12,12 +12,12 @@ const CustomerReview = () => {
     <div className="">
       <div className="hero min-h-screen bg-base-200 rounded-3xl mt-10">
         <div className="hero-content flex-col lg:flex-row-reverse gap-14 justify-center">
-          <div className="text-center w-1/2 lg:text-left">
+          <div className="text-center w-full md:w-1/2  lg:text-left">
             {customers.map((customer) => (
               <Customer key={customer.bookId} customer={customer}></Customer>
             ))}
           </div>
-          <div className="card shrink-0 w-1/2 shadow-2xl bg-base-100">
+          <div className="card shrink-0 w-full md:w-1/2 shadow-2xl bg-base-100">
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
