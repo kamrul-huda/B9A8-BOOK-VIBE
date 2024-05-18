@@ -41,7 +41,7 @@ const PagesToRead = () => {
   };
 
   return (
-    <div className="h-[500px] bg-[#1313130D] rounded-3xl flex justify-evenly items-center mt-6">
+    <div className="h-[500px] md:bg-[#1313130D] rounded-3xl flex justify-evenly items-center mt-6">
       <div className="flex justify-center mt-10">
         <BarChart
           width={730}
