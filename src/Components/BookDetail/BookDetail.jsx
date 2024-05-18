@@ -78,7 +78,7 @@ const BookDetail = () => {
           {tags.map((tag, i) => (
             <p
               key={i}
-              className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium  workSans py-1"
+              className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium  workSans px-2 py-1"
             >
               #{tag}
             </p>

@@ -13,7 +13,7 @@ const Books = () => {
       <h2 className=" playfair font-bold text-4xl text-[#131313] mb-10">
         Books
       </h2>
-      <div className="grid lg:grid-cols-3 gap-4 p-2 md:p-0">
+      <div className="grid md:grid-cols-3 gap-4 p-2 md:p-0">
         {books.map((book) => (
           <Book key={book.bookId} book={book}></Book>
         ))}

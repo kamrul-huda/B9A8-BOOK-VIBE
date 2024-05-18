@@ -87,7 +87,7 @@ const ListedBooks = () => {
               <a>Number of pages</a>
             </li>
             <li onClick={() => handleReadBooksFilter("Publisher year")}>
-              <a>Publisher</a>
+              <a>Publisher year</a>
             </li>
           </ul>
         </details>

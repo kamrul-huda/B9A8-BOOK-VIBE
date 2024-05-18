@@ -27,11 +27,11 @@ const Book = ({ book }) => {
           />
 
           <div className="card-body space-y-2">
-            <div className="flex  justify-between items-center gap-3 text-left">
+            <div className="flex justify-start items-center gap-3">
               {tags.map((tag, i) => (
                 <p
                   key={i}
-                  className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium workSans pl-3 py-2"
+                  className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium workSans  py-1"
                 >
                   {tag}
                 </p>
@@ -48,7 +48,7 @@ const Book = ({ book }) => {
               <p className="workSans">{category}</p>
               <p className="flex justify-end items-center gap-1">
                 <span>{rating}</span>
-                <span className="font-bold workSans">
+                <span className="font-extrabold workSans text-2xl">
                   <CiStar />
                 </span>
               </p>

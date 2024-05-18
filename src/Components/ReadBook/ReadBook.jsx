@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { GoPeople } from "react-icons/go";
 import { RiPagesLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { IoLocationOutline } from "react-icons/io5";
 
 const ReadBook = ({ book }) => {
   const {
@@ -18,31 +19,40 @@ const ReadBook = ({ book }) => {
     yearOfPublishing,
   } = book;
   return (
-    <div className="lg:flex justify-between items-center mt-10 gap-6 lg:h-[300px] border-2 rounded-xl p-5">
-      <div className="lg:w-1/3 bg-[#1313130D] rounded-2xl flex justify-center h-full">
+    <div className="md:flex justify-between items-center mt-10 gap-6 md:h-[300px] border-2 rounded-xl p-5">
+      <div className="md:w-1/3 bg-[#1313130D] rounded-2xl flex justify-center h-full">
         <img className="bg-[#F3F3F3] h-full object-fill" src={image} alt="" />
       </div>
-      <div className="lg:w-2/3 space-y-2 h-full lg:flex ;g:flex-col lg:justify-center">
-        <p className="text-[##131313] font-bold text-2xl lg:text-4xl playfair mt-3 lg:mt-0">
+      <div className="md:w-2/3 space-y-2 h-full md:flex md:flex-col md:justify-center">
+        <p className="text-[##131313] font-bold text-2xl md:text-4xl playfair mt-3 md:mt-0">
           {bookName}
         </p>
         <p className="text-[#131313CC] font-medium text-xl workSans">
           By: {author}
         </p>
 
-        <div className="flex  items-center gap-4 text-left workSans">
-          <b> Tag</b>
-          {tags.map((tag, i) => (
-            <p
-              key={i}
-              className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium  .workSans py-1"
-            >
-              #{tag}
-            </p>
-          ))}
+        <div className="md:flex  items-center gap-10 text-left workSans">
+          <div className="flex  items-center gap-4 text-left workSans">
+            <b> Tag</b>
+            {tags.map((tag, i) => (
+              <p
+                key={i}
+                className="rounded-full text-[#23BE0A] bg-[#23BE0A0D] font-medium  workSans py-1 px-2"
+              >
+                #{tag}
+              </p>
+            ))}
+          </div>
+          <div className="flex items-center gap-2 text-left workSans">
+            <span>
+              <IoLocationOutline />
+            </span>
+            <span>Year of Publishing </span>
+            <span>{yearOfPublishing}</span>
+          </div>
         </div>
 
-        <div className="lg:flex justify-start items-center gap-6 pb-3">
+        <div className="md:flex justify-start items-center gap-6 pb-3">
           <div className="workSans text-[#131313B3] flex items-center gap-2">
             <span>
               <GoPeople />
@@ -59,7 +69,7 @@ const ReadBook = ({ book }) => {
           </div>
         </div>
         <hr className="" />
-        <div className="flex flex-col gap-2 lg:flex lg:justify-start lg:items-center pt-3 lg:gap-6">
+        <div className="flex flex-col gap-2 md:flex md:flex-row md:justify-start md:items-center pt-3 md:gap-6">
           <div className="btn bg-[#328EFF26] hover:bg-[#328EFF26] hover:scale-105 rounded-full workSans text-[#328EFF]">
             <span> Category:</span>
             <span> {category}</span>

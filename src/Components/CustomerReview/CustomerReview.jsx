@@ -11,8 +11,8 @@ const CustomerReview = () => {
   return (
     <div className="">
       <div className="hero min-h-screen bg-base-200 rounded-3xl mt-10">
-        <div className="hero-content flex-col lg:flex-row-reverse gap-14 justify-center">
-          <div className="text-center w-full md:w-1/2  lg:text-left">
+        <div className="hero-content flex-col md:flex-row-reverse gap-14 justify-center">
+          <div className="text-center w-full md:w-1/2  md:text-left">
             {customers.map((customer) => (
               <Customer key={customer.bookId} customer={customer}></Customer>
             ))}
