@@ -41,32 +41,34 @@ const PagesToRead = () => {
   };
 
   return (
-    <div className="flex justify-center mt-10">
-      <BarChart
-        width={600}
-        height={400}
-        data={readBooks}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="bookName" />
-        <YAxis />
-        <Bar
-          dataKey="totalPages"
-          fill="#8884d8"
-          shape={<TriangleBar />}
-          label={{ position: "top" }}
+    <div className="h-[500px] bg-[#1313130D] rounded-3xl flex justify-evenly items-center mt-6">
+      <div className="flex justify-center mt-10">
+        <BarChart
+          width={800}
+          height={400}
+          data={readBooks}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
         >
-          {readBooks.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-          ))}
-        </Bar>
-      </BarChart>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="bookName" />
+          <YAxis />
+          <Bar
+            dataKey="totalPages"
+            fill="#8884d8"
+            shape={<TriangleBar />}
+            label={{ position: "top" }}
+          >
+            {readBooks.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </div>
     </div>
   );
 };

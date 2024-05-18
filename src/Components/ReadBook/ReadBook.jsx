@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { GoPeople } from "react-icons/go";
 import { RiPagesLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const ReadBook = ({ book }) => {
   const {
@@ -55,17 +56,19 @@ const ReadBook = ({ book }) => {
         </div>
         <hr className="" />
         <div className="flex justify-start items-center pt-3 gap-6">
-          <div className="btn bg-[#328EFF26] rounded-full .workSans text-[#328EFF]">
+          <div className="btn bg-[#328EFF26] hover:bg-[#328EFF26] hover:scale-105 rounded-full .workSans text-[#328EFF]">
             <span> Category:</span>
             <span> {category}</span>
           </div>
-          <div className="btn .workSans text-[#FFAC33] bg-[#FFAC3326] rounded-full">
+          <div className="btn .workSans text-[#FFAC33] bg-[#FFAC3326] hover:bg-[#FFAC3326] hover:scale-105 rounded-full">
             <span> Rating:</span>
             <span>{rating}</span>
           </div>
-          <button className="btn bg-[#23BE0A] hover:bg-[#23BE0A] hover:scale-105 text-white rounded-full font-medium text-base .workSans">
-            View Details
-          </button>
+          <Link to={`/bookDetail/${bookId}`}>
+            <button className="btn bg-[#23BE0A] hover:bg-[#23BE0A] hover:scale-105 text-white rounded-full font-medium text-base .workSans">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
