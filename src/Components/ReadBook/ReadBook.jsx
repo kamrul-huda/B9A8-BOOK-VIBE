@@ -21,7 +21,11 @@ const ReadBook = ({ book }) => {
   return (
     <div className="md:flex justify-between items-center mt-10 gap-6 md:h-[300px] border-2 rounded-xl p-5">
       <div className="md:w-1/3 bg-[#1313130D] rounded-2xl flex justify-center h-full">
-        <img className="bg-[#F3F3F3] h-full object-fill" src={image} alt="" />
+        <img
+          className="bg-[#F3F3F3] h-full object-fill py-2 md:py-3"
+          src={image}
+          alt=""
+        />
       </div>
       <div className="md:w-2/3 space-y-2 h-full md:flex md:flex-col md:justify-center">
         <p className="text-[##131313] font-bold text-2xl md:text-4xl playfair mt-3 md:mt-0">

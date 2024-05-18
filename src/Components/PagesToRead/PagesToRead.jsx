@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredReadBook } from "../../Utility/localStorage";
-import { Bar, BarChart, CartesianGrid, Cell, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
@@ -41,11 +49,9 @@ const PagesToRead = () => {
   };
 
   return (
-    <div className="h-[500px] md:bg-[#1313130D] rounded-3xl flex justify-evenly items-center mt-6">
-      <div className="flex justify-center mt-10">
+    <div className="flex justify-center bg-[#1313130D] rounded-3xl py-5">
+      <ResponsiveContainer width="90%" height={400}>
         <BarChart
-          width={730}
-          height={400}
           data={readBooks}
           margin={{
             top: 20,
@@ -68,7 +74,7 @@ const PagesToRead = () => {
             ))}
           </Bar>
         </BarChart>
-      </div>
+      </ResponsiveContainer>
     </div>
   );
 };
