@@ -55,8 +55,12 @@ const BookDetail = () => {
 
   return (
     <div className="flex flex-col md:flex-row  justify-between items-center mt-10 gap-6 min-h-[400px] p-2">
-      <div className="w-full md:w-1/2 bg-[#1313130D] rounded-2xl flex justify-center h-full">
-        <img className="bg-[#F3F3F3] h-full object-fill" src={image} alt="" />
+      <div className="w-full md:w-1/2 bg-[#1313130D] rounded-5xl flex justify-center h-full">
+        <img
+          className="bg-[#F3F3F3] h-full object-fill p-6"
+          src={image}
+          alt=""
+        />
       </div>
       <div className="w-full md:w-1/2 space-y-3 h-full p-3">
         <p className="text-[##131313] font-bold text-4xl playfair">

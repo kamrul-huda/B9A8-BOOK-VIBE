@@ -44,7 +44,7 @@ const PagesToRead = () => {
     <div className="h-[500px] bg-[#1313130D] rounded-3xl flex justify-evenly items-center mt-6">
       <div className="flex justify-center mt-10">
         <BarChart
-          width={800}
+          width={730}
           height={400}
           data={readBooks}
           margin={{

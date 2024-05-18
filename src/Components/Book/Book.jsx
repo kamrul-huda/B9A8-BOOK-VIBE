@@ -21,7 +21,7 @@ const Book = ({ book }) => {
       <Link to={`/bookDetail/${bookId}`}>
         <div className="card card-compact bg-base-100 border-2 border-solid p-4 ">
           <img
-            className="bg-[#F3F3F3] rounded-2xl h-[200px] object-contain"
+            className="bg-[#F3F3F3] rounded-2xl h-[200px] object-contain py-3"
             src={image}
             alt="Books"
           />
