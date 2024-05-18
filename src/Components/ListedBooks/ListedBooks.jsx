@@ -21,19 +21,19 @@ const ListedBooks = () => {
     } else if (filter === "Rating") {
       setDisplayReadBooks([]);
       const ratingBooks = [...readBooks].sort((a, b) =>
-        a.rating > b.rating ? 1 : -1
+        a.rating > b.rating ? -1 : 1
       );
 
       setDisplayReadBooks(ratingBooks);
     } else if (filter === "Number of pages") {
       const noOfPagesOfBook = [...readBooks].sort((a, b) =>
-        a.totalPages > b.totalPages ? 1 : -1
+        a.totalPages > b.totalPages ? -1 : 1
       );
       setDisplayReadBooks([]);
       setDisplayReadBooks(noOfPagesOfBook);
     } else if (filter === "Publisher year") {
       const publisherBooks = [...readBooks].sort((a, b) =>
-        a.yearOfPublishing > b.yearOfPublishing ? 1 : -1
+        a.yearOfPublishing > b.yearOfPublishing ? -1 : 1
       );
       setDisplayReadBooks([]);
       setDisplayReadBooks(publisherBooks);
