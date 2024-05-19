@@ -49,19 +49,24 @@ const PagesToRead = () => {
   };
 
   return (
-    <div className="flex justify-center bg-[#1313130D] rounded-3xl py-5">
-      <ResponsiveContainer width="90%" height={400}>
+    <div className="flex justify-center bg-[#1313130D] rounded-3xl py-5 ">
+      <ResponsiveContainer width="95%" height={600}>
         <BarChart
           data={readBooks}
           margin={{
             top: 20,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 150,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="bookName" />
+          <XAxis
+            dataKey="bookName"
+            interval="preserveStartEnd"
+            angle={-65}
+            textAnchor={"end"}
+          />
           <YAxis />
           <Bar
             dataKey="totalPages"
